@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -7,4 +7,13 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     font-family: 'Avenir'
   }
-`
+
+  h3,p {
+      font-size: 14px;
+      margin: 0;
+  }
+
+  p {
+    color: #9CA3AF;
+  }
+`;
