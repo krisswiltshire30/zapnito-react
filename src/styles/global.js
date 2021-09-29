@@ -8,9 +8,15 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Avenir'
   }
 
+  html {
+      background-color: #F5F6F8;
+  }
+
   h3,p {
       font-size: 14px;
+      line-height: 1.25rem;
       margin: 0;
+      padding-bottom: 0.25rem;
   }
 
   p {

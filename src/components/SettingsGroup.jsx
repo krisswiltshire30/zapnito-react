@@ -4,18 +4,15 @@ import PropTypes from "prop-types";
 
 const GroupContainer = styled.div`
   grid-row: span 2 / span 2;
+  padding: 1.25rem;
 `;
-
-const Title = styled.h3``;
-
-const Description = styled.p``;
 
 const SettingsGroup = (props) => {
   const { title, description } = props;
   return (
     <GroupContainer>
-      <Title>{title}</Title>
-      <Description>{description}</Description>
+      <h3>{title}</h3>
+      <p>{description}</p>
     </GroupContainer>
   );
 };
