@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import "./fonts/fonts.css"; 
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -21,5 +22,9 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
     color: #9CA3AF;
+  }
+
+  label, input {
+      display: inline-block;
   }
 `;

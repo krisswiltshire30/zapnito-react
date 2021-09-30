@@ -54,12 +54,13 @@ const CheckBox = styled.input.attrs({
   }
 `;
 
-const ToggleSwitch = () => {
+const ToggleSwitch = (props) => {
+  const { enabled, setEnabled } = props;
   const uid = useUID();
   return (
     <ToggleWrapper>
-      <CheckBox id={uid} />
-      <ToggleLabel htmlFor={uid} class="toggle-label"></ToggleLabel>
+      <CheckBox id={uid} onChange={() => setEnabled(!enabled)} />
+      <ToggleLabel htmlFor={uid}></ToggleLabel>
     </ToggleWrapper>
   );
 };
