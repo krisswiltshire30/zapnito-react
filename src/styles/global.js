@@ -24,6 +24,11 @@ export const GlobalStyle = createGlobalStyle`
     color: #9CA3AF;
   }
 
+  input {
+    color: #9CA3AF;
+    font-family: 'Avenir';
+  }
+
   label, input {
       display: inline-block;
   }
