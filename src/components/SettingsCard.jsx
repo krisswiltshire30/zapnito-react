@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ToggleSwitch from "./ToggleSwitch";
 
 const CardContainer = styled.div`
   position: relative;
@@ -7,7 +8,7 @@ const CardContainer = styled.div`
   background-color: white;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding: 1.25rem;
+  padding: 20px;
 `;
 const SettingsCard = (props) => {
   const { title } = props;
@@ -17,6 +18,7 @@ const SettingsCard = (props) => {
       <p>
         Follow <a href="/">our guide</a> on how to set up your {title} access
       </p>
+        <ToggleSwitch/>
     </CardContainer>
   );
 };

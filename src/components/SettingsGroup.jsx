@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const GroupContainer = styled.div`
   grid-row: span 2 / span 2;
-  padding: 1.25rem;
+  padding: 20px;
 `;
 
 const SettingsGroup = (props) => {
