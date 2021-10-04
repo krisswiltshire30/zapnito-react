@@ -16,7 +16,7 @@ const Grid = styled.div`
 `;
 
 const Settings = (props) => {
-  const {settings } = props;
+  const { settings } = props;
 
   return (
     <>
@@ -28,7 +28,7 @@ const Settings = (props) => {
         <SettingsCard
           title={constStr.FACEBOOK_SSO_TITLE}
           isEnabled={settings.facebook.enabled}
-          doubleInput={true}
+          hasSecondInput={true}
           inputLabel1={constStr.FACEBOOK_INPUT1_TITLE}
           inputLabel2={constStr.FACEBOOK_INPUT2_TITLE}
           defaultValue={settings.facebook.app_id}

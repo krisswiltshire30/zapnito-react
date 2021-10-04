@@ -6,7 +6,6 @@ const ToggleWrapper = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
-  margin-right: 8px;
   display: inline-block;
   width: 40px;
   user-select: none;
@@ -19,7 +18,7 @@ const ToggleLabel = styled.label`
   width: 41px;
   height: 22px;
   border-radius: 15px;
-  background: rgba(209, 213, 219, 1);
+  background: ${(props) => props.theme.colors.grey[1]};
   cursor: pointer;
   &::after {
     content: "";
@@ -28,10 +27,11 @@ const ToggleLabel = styled.label`
     width: 18px;
     height: 18px;
     margin: 2px;
-    background: #ffffff;
+    background: ${(props) => props.theme.colors.white};
     transition: 0.2s;
   }
 `;
+
 const CheckBox = styled.input.attrs({
   type: "checkbox",
 })`
@@ -41,7 +41,7 @@ const CheckBox = styled.input.attrs({
   width: 41px;
   height: 26px;
   &:checked + ${ToggleLabel} {
-    background: #4fbe79;
+    background: ${(props) => props.theme.colors.green};
     &::after {
       content: "";
       display: block;

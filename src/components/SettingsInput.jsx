@@ -27,7 +27,7 @@ const InputWrapper = styled.div`
 
 const Input = styled.input`
   box-sizing: border-box;
-  width: 97%;
+  width: 99%;
   border-radius: 2px;
   box-shadow: none;
   border-width: 1px;
@@ -39,7 +39,7 @@ const Input = styled.input`
 `;
 
 const Required = styled.span`
-  color: red;
+  color: ${(props) => props.theme.colors.red};;
   margin-left: 2px;
 `;
 
@@ -51,17 +51,32 @@ const Label = styled.label`
 `;
 
 const SettingsInput = (props) => {
-  const { inputLabel1, defaultValue, type="text" } = props;
+  const {
+    inputLabel,
+    defaultValue,
+    hasSecondInput,
+    type = "text",
+    setInput1 = "",
+    setInput2 = "" } = props;
   const uid = useUID();
 
+  const ChangeHandler = (e) => {
+    if (hasSecondInput) {
+      console.log();
+      setInput2(e.target.value)
+    } else {
+      setInput1(e.target.value)
+    }
+  }
+
   return (
-      <InputWrapper>
-        <Label htmlFor={uid}>
-          {inputLabel1}
-        </Label>
-          <Required>*</Required>
-        <Input id={uid} type={type} defaultValue={defaultValue} />
-      </InputWrapper>
+    <InputWrapper>
+      <Label htmlFor={uid}>
+        {inputLabel}
+      </Label>
+      <Required>*</Required>
+      <Input id={uid} type={type} defaultValue={defaultValue} onChange={(e) => ChangeHandler(e)} />
+    </InputWrapper>
   );
 };
 

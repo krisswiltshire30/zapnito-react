@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ToggleSwitch from "./ToggleSwitch";
 import SettingsInput from "./SettingsInput";
+import Button from "./Button"
 
 const CardContainer = styled.div`
   position: relative;
   overflow: hidden;
   grid-column: span 2 / span 2;
-  background-color: white;
+  background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 20px;
@@ -15,7 +16,6 @@ const CardContainer = styled.div`
   ${(props) => props.theme.query.lg} {
     grid-column: span 3 / span 3;
   }
-
 
 `;
 
@@ -40,14 +40,16 @@ const SettingsCard = (props) => {
     inputLabel1,
     inputLabel2,
     isEnabled,
-    doubleInput,
+    hasSecondInput,
     type,
     defaultValue,
   } = props;
   const [enabled, setEnabled] = useState(isEnabled);
+  const [input1, setInput1] = useState("");
+  const [input2, setInput2] = useState("");
 
   return (
-    <CardContainer enabled={enabled} doubleInput={doubleInput}>
+    <CardContainer >
       <h3>{title}</h3>
       <Description>
         Follow <a href="/">our guide</a> on how to set up your {title} access
@@ -56,17 +58,29 @@ const SettingsCard = (props) => {
       <FormContainer>
         {enabled && (
           <SettingsInput
-            inputLabel1={inputLabel1}
+            inputLabel={inputLabel1}
             type={type}
             defaultValue={defaultValue}
+            setInput1={setInput1}
           />
         )}
-        {enabled && doubleInput && (
+        {enabled && hasSecondInput && (
           <SettingsInput
-            inputLabel1={inputLabel2}
-            doubleInput={doubleInput}
+            inputLabel={inputLabel2}
+            hasSecondInput={hasSecondInput}
             defaultValue={defaultValue}
+            setInput2={setInput2}
             type={"password"}
+          />
+        )}
+        {enabled && (
+          <Button
+            text="Update"
+            title={title}
+            inputLabel1={inputLabel1}
+            inputLabel2={inputLabel2}
+            input1={input1}
+            input2={input2}
           />
         )}
       </FormContainer>

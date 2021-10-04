@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import "./fonts/fonts.css"; 
 
 export const GlobalStyle = createGlobalStyle`
-    :root {
+    :root, button, input {
     font-size: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -10,7 +10,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-      background-color: #F5F6F8;
+      background-color: ${(props) => props.theme.colors.grey[0]};;
+  }
+
+  h3 {
+    color: ${(props) => props.theme.colors.black};;
   }
 
   h3,p {
@@ -21,13 +25,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    color: #9CA3AF;
+    color: ${(props) => props.theme.colors.accent1};
   }
 
   input {
-    color: #9CA3AF;
-    font-family: 'Avenir';
+    color: ${(props) => props.theme.colors.accent1};;
   }
+
 
   label, input {
       display: inline-block;
