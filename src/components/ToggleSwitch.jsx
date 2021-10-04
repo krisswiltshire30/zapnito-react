@@ -8,7 +8,7 @@ const ToggleWrapper = styled.div`
   right: 20px;
   margin-right: 8px;
   display: inline-block;
-  width: 2.5rem;
+  width: 40px;
   user-select: none;
 `;
 

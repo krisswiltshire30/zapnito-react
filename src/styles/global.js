@@ -15,9 +15,9 @@ export const GlobalStyle = createGlobalStyle`
 
   h3,p {
       font-size: 14px;
-      line-height: 1.25rem;
+      line-height: 20px;
       margin: 0;
-      padding-bottom: 0.25rem;
+      padding-bottom: 4px;
   }
 
   p {

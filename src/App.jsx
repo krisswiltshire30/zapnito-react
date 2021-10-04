@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Settings from "./components/Settings";
 import LoadingSpinner from "./components/LoadingSpinner";
-import constStr from "./components/constantString";
+import  {ThemeProvider} from 'styled-components'
 import { GlobalStyle } from "./styles/global";
+import theme from "./styles/theme"
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -25,12 +26,12 @@ const App = () => {
 
   if (data) {
     return (
-      <>
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Settings
           settings={data.settings}
         ></Settings>
-      </>
+      </ThemeProvider>
     );
   } else {
     return <LoadingSpinner />;

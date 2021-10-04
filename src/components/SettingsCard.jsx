@@ -12,17 +12,20 @@ const CardContainer = styled.div`
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 20px;
 
-  @media only screen and (max-width: 830px) {
+  ${(props) => props.theme.query.lg} {
     grid-column: span 3 / span 3;
   }
+
+
 `;
 
 const FormContainer = styled.div`
   white-space: nowrap;
   padding-top: 12px;
 
-  @media only screen and (max-width: 440px) {
+  ${(props) => props.theme.query.md} {
     white-space: unset;
+
   }
 `;
 

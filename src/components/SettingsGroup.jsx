@@ -6,10 +6,11 @@ const GroupContainer = styled.div`
   grid-row: span 2 / span 2;
   padding: 20px;
 
-  @media only screen and (max-width: 834px) {
+  ${(props) => props.theme.query.lg} {
     grid-row: span 1 / span 1;
     grid-column: span 3 / span 3;
   }
+
 `;
 
 const SettingsGroup = (props) => {

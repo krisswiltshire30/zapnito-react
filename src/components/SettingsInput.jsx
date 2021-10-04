@@ -18,22 +18,23 @@ const InputWrapper = styled.div`
     }
   }
 
-  @media only screen and (max-width: 440px) {
+  ${(props) => props.theme.query.md} {
     width: 100%;
     padding-bottom: 10px;
   }
+
 `;
 
 const Input = styled.input`
   box-sizing: border-box;
   width: 97%;
-  border-radius: 0.125rem;
+  border-radius: 2px;
   box-shadow: none;
   border-width: 1px;
   border: 1px solid rgba(209, 213, 219, 1);
-  padding: 0.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  padding: 8px;
+  font-size: 14px;
+  line-height: 20px;
   transition: 0.5s;
 `;
 
@@ -43,9 +44,9 @@ const Required = styled.span`
 `;
 
 const Label = styled.label`
-  padding-bottom: 0.25rem;
+  padding-bottom: 4px;
   font-size: 14px;
-  line-height: 1.25rem;
+  line-height: 20px;
   font-weight: 700;
 `;
 

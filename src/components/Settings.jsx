@@ -9,10 +9,14 @@ const Grid = styled.div`
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   padding: 40px;
+
+  ${(props) => props.theme.query.md} {
+    padding: 10px 10px 0 10px;
+  }
 `;
 
 const Settings = (props) => {
-  const { title, description, settings } = props;
+  const {settings } = props;
 
   return (
     <>
