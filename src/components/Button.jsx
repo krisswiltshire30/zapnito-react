@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"
 import styled from "styled-components"
 
 const ButtonWrapper = styled.div`
@@ -20,7 +21,7 @@ const ButtonWrapper = styled.div`
     button{
         position: absolute;
         right: 4px;
-        bottom: 0.5px;
+        bottom: 0;
         background-color: ${(props) => props.theme.colors.green};
         color: ${(props) => props.theme.colors.white};
         padding: 4px 8px 4px 8px;
@@ -53,5 +54,14 @@ const Button = (props) => {
         </ButtonWrapper>
     )
 }
+
+Button.propTypes = {
+    title: PropTypes.string,
+    text: PropTypes.string,
+    inputLabel1: PropTypes.string,
+    inputLabel2: PropTypes.string,
+    input1: PropTypes.string,
+    input2: PropTypes.string,
+  };
 
 export default Button

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"
 import { useUID } from "react-uid";
 import styled from "styled-components";
 
@@ -65,5 +66,10 @@ const ToggleSwitch = (props) => {
     </ToggleWrapper>
   );
 };
+
+ToggleSwitch.propTypes = {
+  enabled: PropTypes.bool,
+  setEnabled: PropTypes.func,
+}
 
 export default ToggleSwitch;

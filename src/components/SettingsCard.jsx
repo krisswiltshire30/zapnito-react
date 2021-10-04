@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types"
 import styled from "styled-components";
 import ToggleSwitch from "./ToggleSwitch";
 import SettingsInput from "./SettingsInput";
@@ -87,5 +88,15 @@ const SettingsCard = (props) => {
     </CardContainer>
   );
 };
+
+SettingsCard.propTypes = {
+    title: PropTypes.string,
+    inputLabel1: PropTypes.string,
+    inputLabel2: PropTypes.string,
+    isEnabled: PropTypes.bool,
+    hasSecondInput:  PropTypes.bool,
+    type: PropTypes.string,
+    defaultValue: PropTypes.string,
+}
 
 export default SettingsCard;

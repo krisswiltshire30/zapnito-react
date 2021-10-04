@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"
 import styled from "styled-components";
 import SettingsGroup from "./SettingsGroup";
 import SettingsCard from "./SettingsCard";
@@ -43,6 +44,10 @@ const Settings = (props) => {
       </Grid>
     </>
   );
+};
+
+Settings.propTypes = {
+  Settings: PropTypes.object,
 };
 
 export default Settings;

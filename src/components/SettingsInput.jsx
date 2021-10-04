@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"
 import styled from "styled-components";
 import { useUID } from "react-uid";
 
@@ -62,7 +63,6 @@ const SettingsInput = (props) => {
 
   const ChangeHandler = (e) => {
     if (hasSecondInput) {
-      console.log();
       setInput2(e.target.value)
     } else {
       setInput1(e.target.value)
@@ -78,6 +78,15 @@ const SettingsInput = (props) => {
       <Input id={uid} type={type} defaultValue={defaultValue} onChange={(e) => ChangeHandler(e)} />
     </InputWrapper>
   );
+};
+
+SettingsInput.propTypes = {
+   inputLabel: PropTypes.string,
+    defaultValue: PropTypes.string,
+    hasSecondInput: PropTypes.bool,
+    type: PropTypes.string,
+    setInput1: PropTypes.func,
+    setInput2: PropTypes.func,
 };
 
 export default SettingsInput;
